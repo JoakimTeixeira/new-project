@@ -1,7 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Home, About, Contact } from 'pages';
-import NavBar from 'components/NavBar';
+import {
+  Home, About, Contact, Blog,
+} from 'pages';
+import { NavBar } from 'components';
 
 const App = () => (
   <BrowserRouter>
@@ -18,6 +20,10 @@ const App = () => (
 
       <Route path="/contact">
         <Contact />
+      </Route>
+
+      <Route path="/blog">
+        <Blog />
       </Route>
     </Switch>
   </BrowserRouter>
