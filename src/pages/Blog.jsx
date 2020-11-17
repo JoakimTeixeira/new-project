@@ -3,7 +3,7 @@ import { ListGroup } from 'react-bootstrap';
 import {
   Route, Switch, useRouteMatch, NavLink,
 } from 'react-router-dom';
-import { Recipes, Cats } from 'components';
+import { Recipes, Cats, Books } from 'components';
 
 const Blog = () => {
   const { path, url } = useRouteMatch();
@@ -14,7 +14,7 @@ const Blog = () => {
       <ListGroup className="mb-4">
         <ListGroup.Item action as={NavLink} to={`${url}/recipes`}>Recipes</ListGroup.Item>
         <ListGroup.Item action as={NavLink} to={`${url}/cats`}>Cats</ListGroup.Item>
-        <ListGroup.Item action>Books</ListGroup.Item>
+        <ListGroup.Item action as={NavLink} to={`${url}/books`}>Books</ListGroup.Item>
       </ListGroup>
 
       <Switch>
@@ -24,6 +24,10 @@ const Blog = () => {
 
         <Route path={`${path}/cats`}>
           <Cats />
+        </Route>
+
+        <Route path={`${path}/books`}>
+          <Books />
         </Route>
       </Switch>
     </section>
