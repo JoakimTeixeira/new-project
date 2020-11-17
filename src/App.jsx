@@ -1,17 +1,22 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
-import Home from 'pages/Home';
-import About from 'pages/About';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Home, About, Contact } from 'pages';
 
 const App = () => (
   <BrowserRouter>
-    <Route exact path="/">
-      <Home />
-    </Route>
+    <Switch>
+      <Route exact path="/">
+        <Home />
+      </Route>
 
-    <Route path="/about">
-      <About />
-    </Route>
+      <Route path="/about">
+        <About />
+      </Route>
+
+      <Route path="/contact">
+        <Contact />
+      </Route>
+    </Switch>
   </BrowserRouter>
 );
 
