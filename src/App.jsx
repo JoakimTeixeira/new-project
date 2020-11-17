@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Home, About, Contact } from 'pages';
-import Navbar from 'components/Navbar';
+import NavBar from 'components/NavBar';
 
 const App = () => (
   <BrowserRouter>
-    <Navbar />
+    <NavBar />
 
     <Switch>
       <Route exact path="/">
