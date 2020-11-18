@@ -17,6 +17,7 @@ const NavBar = () => {
           <Nav.Link as={NavLink} to="/about">About</Nav.Link>
           <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
           <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
+          <Nav.Link as={NavLink} to="/admin">Admin</Nav.Link>
         </Nav>
         <Button variant="outline-danger" onClick={handleAuth}>{isLoggedIn ? 'Logout' : 'Login'}</Button>
       </Navbar.Collapse>
