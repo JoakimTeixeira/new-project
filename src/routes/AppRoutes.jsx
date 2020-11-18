@@ -12,25 +12,11 @@ const AppRoutes = () => (
     <NavBar />
 
     <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
-
-      <Route path="/about">
-        <About />
-      </Route>
-
-      <Route path="/contact">
-        <Contact />
-      </Route>
-
-      <Route path="/blog">
-        <Blog />
-      </Route>
-
-      <PrivateRoute path="/admin">
-        <Admin />
-      </PrivateRoute>
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/contact" component={Contact} />
+      <Route path="/blog" component={Blog} />
+      <PrivateRoute path="/admin" component={Admin} />
     </Switch>
   </BrowserRouter>
 );

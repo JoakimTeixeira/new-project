@@ -8,17 +8,9 @@ import PropTypes from 'prop-types';
 
 const BlogRoutes = ({ path }) => (
   <Switch>
-    <Route path={`${path}/recipes`}>
-      <Recipes />
-    </Route>
-
-    <Route path={`${path}/cats`}>
-      <Cats />
-    </Route>
-
-    <Route path={`${path}/books`}>
-      <Books />
-    </Route>
+    <Route path={`${path}/recipes`} component={Recipes} />
+    <Route path={`${path}/cats`} component={Cats} />
+    <Route path={`${path}/books`} component={Books} />
   </Switch>
 );
 

@@ -3,13 +3,13 @@ import React, { useContext } from 'react';
 import { Redirect, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-const PrivateRoute = ({ children, path }) => {
+const PrivateRoute = ({ component: Component, path }) => {
   const { isLoggedIn } = useContext(AuthContext);
 
   return (
     <Route
       path={path}
-      render={() => (isLoggedIn ? children : <Redirect to="/" />)}
+      render={() => (isLoggedIn ? <Component /> : <Redirect to="/" />)}
     />
   );
 };
@@ -17,6 +17,6 @@ const PrivateRoute = ({ children, path }) => {
 export default PrivateRoute;
 
 PrivateRoute.propTypes = {
-  children: PropTypes.node.isRequired,
+  component: PropTypes.elementType.isRequired,
   path: PropTypes.string.isRequired,
 };
