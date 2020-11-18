@@ -4,29 +4,32 @@ import {
   Home, About, Contact, Blog,
 } from 'pages';
 import { NavBar } from 'components';
+import { AuthContextProvider } from 'contexts/AuthContext';
 
 const App = () => (
-  <BrowserRouter>
-    <NavBar />
+  <AuthContextProvider>
+    <BrowserRouter>
+      <NavBar />
 
-    <Switch>
-      <Route exact path="/">
-        <Home />
-      </Route>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
 
-      <Route path="/about">
-        <About />
-      </Route>
+        <Route path="/about">
+          <About />
+        </Route>
 
-      <Route path="/contact">
-        <Contact />
-      </Route>
+        <Route path="/contact">
+          <Contact />
+        </Route>
 
-      <Route path="/blog">
-        <Blog />
-      </Route>
-    </Switch>
-  </BrowserRouter>
+        <Route path="/blog">
+          <Blog />
+        </Route>
+      </Switch>
+    </BrowserRouter>
+  </AuthContextProvider>
 );
 
 export default App;

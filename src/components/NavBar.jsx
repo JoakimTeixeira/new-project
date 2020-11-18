@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import {
-  Navbar, Nav,
+  Navbar, Nav, Button,
 } from 'react-bootstrap';
+import { AuthContext } from 'contexts/AuthContext';
 
-const NavBar = () => (
-  <Navbar bg="light" expand="lg">
-    <Navbar.Brand as={Link} to="/">SlashDev</Navbar.Brand>
-    <Nav>
-      <Nav.Link as={NavLink} to="/" exact>Home</Nav.Link>
-      <Nav.Link as={NavLink} to="/about">About</Nav.Link>
-      <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
-      <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
-    </Nav>
-  </Navbar>
-);
+const NavBar = () => {
+  const { isLoggedIn, handleAuth } = useContext(AuthContext);
+  return (
+    <Navbar bg="light" expand="lg">
+      <Navbar.Brand as={Link} to="/">SlashDev</Navbar.Brand>
+      <Nav className="mr-auto">
+        <Nav.Link as={NavLink} to="/" exact>Home</Nav.Link>
+        <Nav.Link as={NavLink} to="/about">About</Nav.Link>
+        <Nav.Link as={NavLink} to="/contact">Contact</Nav.Link>
+        <Nav.Link as={NavLink} to="/blog">Blog</Nav.Link>
+      </Nav>
+      <Button variant="outline-danger" onClick={handleAuth}>{isLoggedIn ? 'Logout' : 'Login'}</Button>
+    </Navbar>
+  );
+};
 
 export default NavBar;
