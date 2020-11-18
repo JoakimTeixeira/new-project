@@ -1,9 +1,7 @@
 import React from 'react';
 import { ListGroup } from 'react-bootstrap';
-import {
-  Route, Switch, useRouteMatch, NavLink,
-} from 'react-router-dom';
-import { Recipes, Cats, Books } from 'components';
+import { useRouteMatch, NavLink } from 'react-router-dom';
+import BlogRoutes from 'routes/BlogRoutes';
 
 const Blog = () => {
   const { path, url } = useRouteMatch();
@@ -17,19 +15,7 @@ const Blog = () => {
         <ListGroup.Item action as={NavLink} to={`${url}/books`}>Books</ListGroup.Item>
       </ListGroup>
 
-      <Switch>
-        <Route path={`${path}/recipes`}>
-          <Recipes />
-        </Route>
-
-        <Route path={`${path}/cats`}>
-          <Cats />
-        </Route>
-
-        <Route path={`${path}/books`}>
-          <Books />
-        </Route>
-      </Switch>
+      <BlogRoutes path={path} />
     </section>
   );
 };
