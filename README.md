@@ -6,6 +6,10 @@ Project to test React Router
 
 ![image](https://user-images.githubusercontent.com/12193814/99558351-66bc7680-29a2-11eb-99e2-d8717969fd0a.png)
 
+## To-do
+
+- [ ] Refactor component states for better atomicity
+
 ## Running the Project
 
 To get started, fork the repository and then run the following commands:
